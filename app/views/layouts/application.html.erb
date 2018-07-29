@@ -22,7 +22,7 @@
         <% end %>
       </div>
       <div class="col-4 slogan">
-        Splurting out unsolicited advice abotu entrepreneurship since 2016
+        Splurting out unsolicited advice about entrepreneurship since 2016
       </div>
       <div class="col-5 links">
         <%= link_to 'Contribute', new_quote_path %>
@@ -35,7 +35,11 @@
     <br class="clear" />
 
     <div class="container">
-
+      <% if flash[:error].present? %>
+        <div class="col-10 offset-1 alert alert-danger">
+          <%= flash[:error].html_safe %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
 
